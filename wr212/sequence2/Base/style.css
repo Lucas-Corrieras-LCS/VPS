@@ -1,0 +1,302 @@
+/*------------------------------------*\
+    $Base / Version mobile
+\*------------------------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  transition: all 0.1s ease-in;
+  text-decoration: none;
+  color: black;
+}
+
+/* En-tête */
+
+#black {
+  background-color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+}
+
+header h1 {
+  font-family: "Permanent Marker", serif;
+  margin-left: 10px;
+}
+
+#liens-secondaires {
+  margin-left: auto;
+  padding: 10px;
+}
+
+#liens-secondaires img {
+  width: 35px;
+}
+
+header a {
+  color: white;
+}
+
+#navigation-principale {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: black;
+}
+
+#navigation-principale a {
+  width: 100px;
+  padding: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+#navigation-principale a:hover {
+  color: #006eff;
+}
+
+/* Aside */
+
+#tri {
+  margin-top: 20px;
+}
+
+.tri-collection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 90px;
+  margin-left: 20px;
+}
+
+.tri-collection label {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 12px;
+}
+
+select {
+  padding: 5px;
+  border: 2px solid #232ab4;
+  border-radius: 5px;
+  background-color: white;
+}
+
+/* Articles */
+
+#produits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+article {
+  text-align: center;
+  width: 50%;
+  margin-top: 10px;
+}
+
+.article-image img {
+  max-width: 150px;
+}
+
+/* Pied de page */
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+#footer-inner {
+  padding: 10px;
+}
+
+footer a {
+  color: #aaa;
+}
+
+footer section p {
+  color: #aaa;
+}
+
+footer section p:hover {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.credit {
+  padding: 10px;
+}
+
+/*------------------------------------*\
+    $Version Tablette
+\*------------------------------------*/
+
+@media screen and (min-width: 480px) {
+  #desk {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  #navigation-principale {
+    display: flex;
+    grid-column: 1/3;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+  }
+
+  .tri-collection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 20px;
+    grid-column: 1/2;
+  }
+
+  article {
+    padding: 20px;
+    grid-column: 2/3;
+    overflow: hidden;
+    position: relative;
+  }
+
+  article a::before,
+  article .article-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  article a::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+  }
+
+  article .article-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  article .article-overlay span {
+    color: white;
+    background-color: #006eff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  article:hover a::before,
+  article:hover .article-overlay {
+    opacity: 1;
+  }
+
+  #footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #footer-inner li {
+    padding: 5px;
+  }
+
+  #footer-inner p {
+    padding: 5px;
+  }
+}
+
+/*------------------------------------*\
+    $Version Desktop
+\*------------------------------------*/
+
+@media screen and (min-width: 960px) {
+  #desk {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  #navigation-principale {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  #produits {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  #tri {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  #produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  article {
+    text-align: center;
+    width: 33%;
+    margin-top: 10px;
+  }
+
+  .article-image img {
+    max-width: 150px;
+  }
+
+  .tri-collection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 85%;
+    margin-left: 20px;
+  }
+
+  footer {
+    padding-bottom: 100px;
+  }
+}

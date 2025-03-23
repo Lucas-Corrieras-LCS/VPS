@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VPS</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+  </head>
+
+  <body class="flex w-full h-full min-h-screen bg-black">
+    <div
+      id="loader"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500"
+    >
+      <div class="socket">
+        <div class="gel center-gel">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c1 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c2 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c3 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c4 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c5 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c6 r1">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+
+        <div class="gel c7 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+
+        <div class="gel c8 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c9 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c10 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c11 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c12 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c13 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c14 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c15 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c16 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c17 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c18 r2">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c19 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c20 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c21 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c22 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c23 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c24 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c25 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c26 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c28 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c29 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c30 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c31 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c32 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c33 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c34 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c35 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c36 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+        <div class="gel c37 r3">
+          <div class="hex-brick h1"></div>
+          <div class="hex-brick h2"></div>
+          <div class="hex-brick h3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="particles-js"></div>
+    <div id="content">
+      <!--Boutton qui permet de sortie la nav-->
+
+      <button
+        data-drawer-target="default-sidebar"
+        data-drawer-toggle="default-sidebar"
+        aria-controls="default-sidebar"
+        type="button"
+        class="fixed top-4 left-4 inline-flex items-center p-2 text-sm text-white rounded-lg hover:scale-150 transition-transform duration-300 z-50"
+      >
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+            d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+          ></path>
+        </svg>
+      </button>
+
+      <aside
+        id="default-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full"
+        aria-label="Sidenav"
+      >
+        <!--Gestion du fond du aside-->
+
+        <div
+          class="overflow-y-auto py-5 px-3 h-full bg-black text-white border-r border-white"
+        >
+          <!--Accueil-->
+
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="flex items-end p-2 mt-10 text-xl font-normal text-white rounded-lg hover:bg-gray-700 group"
+              >
+                <svg
+                  class="w-8 h-8 text-white transition duration-75"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <image href="photo/lcswhite.png" class="w-5 h-5" />
+                </svg>
+                <span class="ml-3">Accueil</span>
+              </a>
+            </li>
+            <li>
+              <!--Premier drop down-->
+
+              <button
+                type="button"
+                class="flex items-center p-2 w-full text-base font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                aria-controls="dropdown-sales"
+                data-collapse-toggle="dropdown-sales"
+              >
+                <svg
+                  class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7H5a2 2 0 0 0-2 2v4m5-6h8M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m0 0h3a2 2 0 0 1 2 2v4m0 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6m18 0s-4 2-9 2-9-2-9-2m9-2h.01"
+                  />
+                </svg>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                  >Travaux</span
+                >
+                <svg
+                  aria-hidden="true"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <ul id="dropdown-sales" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="wr112.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >WR112</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="wr212.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >WR212</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="sae.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >SAE</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!--Deuxième drop down-->
+
+            <li>
+              <button
+                type="button"
+                class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                aria-controls="dropdown-authentication"
+                data-collapse-toggle="dropdown-authentication"
+              >
+                <svg
+                  class="flex-shrink-0 w-6 h-6 transition duration-75 text-gray-400 group-hover:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m8 8-4 4 4 4m8 0 4-4-4-4m-2-3-4 14"
+                  />
+                </svg>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap"
+                  >Projet Personel</span
+                >
+                <svg
+                  aria-hidden="true"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <ul id="dropdown-authentication" class="hidden py-2 space-y-2">
+                <li>
+                  <a
+                    href="port.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >Portfolio</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="tai.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >Tailwind</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="react.html"
+                    class="flex items-center p-2 pl-11 w-full text-base text-white font-normal rounded-lg transition duration-75 group text-white hover:bg-gray-700"
+                    >React</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!--ligne-->
+
+          <ul class="pt-5 mt-5 space-y-2 border-t border-gray-700">
+            <!--portfolio-->
+
+            <li>
+              <a
+                href="https://www.lucas-corrieras.com"
+                target="_blank"
+                class="flex items-center p-2 text-base font-normal rounded-lg transition duration-75 hover:bg-gray-700 text-white group"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="flex-shrink-0 w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <span class="ml-3">Mon Portfolio</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--Title-->
+
+      <div class="text-container">
+        <div class="container">
+          <h1 id="title">
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>K</span>
+            <span>S</span>
+          </h1>
+        </div>
+      </div>
+
+      <!--tailwind-->
+
+      <section>
+        <div
+          class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
+        >
+          <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2
+              class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            >
+              Réalisation de mon portfolio
+            </h2>
+            <p class="mb-4">
+              J’ai créé mon portfolio dans l’optique de mettre en avant mes
+              compétences en design et en expérience utilisateur. À ce
+              moment-là, je n’utilisais pas encore Tailwind CSS, et mon usage
+              des scripts était moins avancé qu’aujourd’hui. Malgré quelques
+              problèmes d’optimisation, ce portfolio me représente.
+            </p>
+            <p class="mb-4">
+              En le réalisant, j’ai appris de nouvelles choses, notamment
+              l’hébergement via Vercel et GitHub, ainsi que la création d’un
+              background animé pour la première fois. Cependant, je prévois de
+              le refondre entièrement avec Tailwind CSS et React afin de
+              démontrer mes compétences dans ces technologies, notamment en vue
+              d’une alternance ou d’un stage.
+            </p>
+            <p>
+              Actuellement, des problèmes d’optimisation persistent, et ma
+              méthodologie de développement n’était pas idéale. J’avais conçu
+              mon portfolio en version desktop sans penser au mobile, ce qui
+              était une erreur majeure. En conséquence, la version mobile manque
+              de finition et ne reflète pas correctement la qualité de mon
+              travail. Malgré cela, je suis fier de ce projet, car il m’a permis
+              de créer quelque chose par moi-même et d’apprendre de mes erreurs.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <img class="w-full rounded-lg" src="photo/js.png" />
+            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="photo/css.png" />
+          </div>
+        </div>
+      </section>
+
+      <!--Footer-->
+
+      <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-900">
+        <div
+          class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+        >
+          <span class="text-sm text-gray-300 sm:text-center"
+            >VPS - LCS - 2025
+          </span>
+          <ul
+            class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-300 sm:mt-0"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="me-4 md:me-6 transition-all duration-500 hover:text-lg"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="wr112.html"
+                class="me-4 md:me-6 transition-all duration-500 hover:text-lg"
+                >WR112</a
+              >
+            </li>
+            <li>
+              <a
+                href="wr212.html"
+                class="me-4 md:me-6 transition-all duration-500 hover:text-lg"
+                >WR212</a
+              >
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+      <!--Fin-->
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>

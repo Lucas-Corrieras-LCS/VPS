@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Avenir, Helvetica, "Open-Sans", "Helvetica Neue", Arial,
+    sans-serif;
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  width: 80vmin;
+  height: 80vmin;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: contents;
+}
+
+li {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+  border: 2px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: scale 0.5s ease;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+li:hover {
+  scale: 1.1;
+}
+
+li:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+li:nth-child(2) {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+li:nth-child(3) {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+li:nth-child(4) {
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+li:nth-child(5) {
+  grid-area: 1 / 5 / 2 / 6;
+}
+
+li:nth-child(6) {
+  grid-area: 2 / 5 / 3 / 6;
+}
+
+li:nth-child(7) {
+  grid-area: 3 / 5 / 4 / 6;
+}
+
+li:nth-child(8) {
+  grid-area: 4 / 5 / 5 / 6;
+}
+
+li:nth-child(9) {
+  grid-area: 5 / 5 / 6 / 6;
+}
+
+li:nth-child(10) {
+  grid-area: 5 / 4 / 6 / 5;
+}
+
+li:nth-child(11) {
+  grid-area: 5 / 3 / 6 / 4;
+}
+
+li:nth-child(12) {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+li:nth-child(13) {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+li:nth-child(14) {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+li:nth-child(15) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+li:nth-child(16) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+#voiture {
+  transform: rotate(135deg);
+}
+#c2,
+#c3,
+#c4 {
+  transform: rotate(180deg);
+  margin-bottom: 25%;
+}
+#police {
+  transform: rotate(225deg);
+}
+#c6,
+#c7,
+#c8 {
+  transform: rotate(270deg);
+  margin-left: 25%;
+}
+#c9 {
+  transform: rotate(315deg);
+  font-size: 2rem;
+}
+
+#c10,
+#c11,
+#c12 {
+  margin-top: 25%;
+}
+
+#prison {
+  transform: rotate(45deg);
+}
+#c14,
+#c15,
+#c16 {
+  transform: rotate(90deg);
+  margin-right: 25%;
+}
+
+.vert {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  background-color: rgb(34, 192, 34);
+  border-top: 2px solid black;
+}
+
+.orang {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: rgb(255, 166, 0);
+  border-right: 2px solid black;
+}
+
+.pink {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  background-color: rgb(223, 0, 123);
+  border-bottom: 2px solid black;
+}
+
+.yel {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: rgb(255, 251, 0);
+  border-left: 2px solid black;
+}
+
+li:nth-child(2) .vert,
+li:nth-child(3) .vert,
+li:nth-child(4) .vert {
+  bottom: 0;
+}
+
+li:nth-child(6) .orang,
+li:nth-child(7) .orang,
+li:nth-child(8) .orang {
+  left: 0;
+}
+
+li:nth-child(10) .pink,
+li:nth-child(11) .pink,
+li:nth-child(12) .pink {
+  top: 0;
+}
+
+li:nth-child(14) .yel,
+li:nth-child(15) .yel,
+li:nth-child(16) .yel {
+  right: 0;
+}
+
+#logo {
+  position: absolute;
+  transform: rotate(-45deg);
+  scale: 0.45;
+}
+
+#voiture {
+  position: absolute;
+  width: 5vw;
+  height: auto;
+}
+
+#prison {
+  position: absolute;
+  width: 5vw;
+  height: auto;
+  margin-left: 5px;
+}
+
+#police {
+  position: absolute;
+  width: 5vw;
+  height: auto;
+  margin-right: 10px;
+}
+
+#pion {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 1s ease; 
+}
+
+#rollDice {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#rollDice:hover {
+  background-color: #e84118;
+}
+
+#diceResult {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #333;
+}
